@@ -1,0 +1,322 @@
+h1 {
+  color: white;
+  background-color: rgb(9, 5, 247);
+  text-align: center;
+}
+a {
+  text-size-adjust: 10px;
+}
+p {
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: 0;
+}
+
+li {
+  font-size: 20px;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(96, 132, 156);
+  margin: 0;
+}
+
+h2,
+h3 {
+  background-color: #333;
+  padding: 10px 0;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.titulo_animado {
+  opacity: 0; /* Começa invisível */
+  transform: translateY(-20px); /* Começa com um deslocamento para cima */
+  animation: fadeInUp 1.5s ease-out forwards; /* Aplica a animação */
+}
+
+/* Estilo do menu */
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Definição da animação */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Começa fora de vista, um pouco acima */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Fica no seu lugar normal */
+  }
+}
+
+/* Estilo para o contêiner principal */
+.container {
+  display: flex; /* Define layout flexbox */
+  justify-content: space-around; /* Espaço igual entre as seções */
+  align-items: stretch; /* Alinha verticalmente ao centro */
+  margin: 0px;
+}
+/* Estilo para o link dentro da seção .box */
+.box a {
+  font-size: 18px; /* Ajuste o tamanho da fonte como desejar */
+  color: #007bff; /* Cor do link (opcional) */
+  text-decoration: none; /* Remove o sublinhado, se desejar */
+}
+
+.box a:hover {
+  text-decoration: underline; /* Coloca sublinhado no link ao passar o mouse (opcional) */
+}
+
+/* Estilo para as seções */
+.box {
+  background: #81f077;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  flex: 1; /* Faz cada seção ocupar espaço proporcional */
+  margin: 10px;
+  max-width: 30%; /* Define largura máxima */
+  font-size: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para transformação e sombra */
+}
+
+.box:hover {
+  transform: scale(1.05); /* Aumenta o tamanho da seção */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 1); /* Sombra suave para destacar */
+}
+
+/* Estilo inicial para as seções */
+.container .box {
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(20px); /* Move para baixo */
+  animation: fadeIn 1s ease-out forwards; /* Aplica animação */
+}
+
+/* Aplica um atraso para cada seção (opcional) */
+.container .box:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.container .box:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.container .box:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+/* Definição da animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* No Flexbox */
+    grid-template-columns: 1fr; /* No Grid */
+  }
+
+  .box {
+    max-width: 100%; /* Ajusta largura para telas pequenas */
+  }
+}
+.fixar_rodape {
+  position: fixed; /* Fixa o footer */
+  bottom: 0; /* Alinha no canto inferior */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Faz o footer ocupar toda a largura */
+  background-color: #333; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px 0; /* Espaçamento interno */
+  z-index: 1000; /* Garante que esteja acima de outros elementos */
+}
+
+/* Estilo para a imagem dentro da seção */
+.selecionar_imagem {
+  width: 100%; /* Faz a imagem ocupar toda a largura da seção */
+  max-width: 500px; /* Limita a largura máxima da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Evita que a imagem tenha espaços ao redor */
+  margin: 20px 0; /* Adiciona um espaço acima e abaixo da imagem */
+  border-radius: 8px; /* Adiciona bordas arredondadas na imagem */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo dos cards */
+.card {
+  background: #81f077;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex; /* Coloca os cards lado a lado */
+  gap: 90px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap; /* Faz os cards quebrarem linha em telas menores */
+  margin: 20px auto; /* Adiciona espaçamento externo */
+  max-width: 1000px; /* Limita a largura máxima do contêiner */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Empilha os cards na vertical */
+    align-items: center; /* Centraliza os cards */
+  }
+}
+
+/* Estilo específico para a seção contrato */
+.contrato {
+  background: #c4c1c1; /* Cor de fundo da seção */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Parágrafo com a pergunta */
+.contrato p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o formulário dentro da classe contrato */
+.form-contrato {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Estilo para os campos de input e textarea */
+.form-contrato input,
+.form-contrato textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilo para o botão de envio */
+.form-contrato button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito no botão ao passar o mouse */
+.form-contrato button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para o card de mensagem */
+.message-card {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: none; /* Inicialmente escondido */
+}
+
+/* Estilo para o card de sucesso */
+.message-card.success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+/* Estilo para o card de erro */
+.message-card.error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Exibe o card após ser adicionado ao DOM */
+.message-card {
+  display: block;
+}
